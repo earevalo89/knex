@@ -18,7 +18,7 @@ module.exports = {
         connection: {
             database: 'knex-crud',
             user: 'postgres',
-            password: 'Imix2019*'
+            password: 'YourPassword'
         },
     },
 
