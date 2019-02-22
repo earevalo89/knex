@@ -266,7 +266,7 @@ module.exports = app;
         "dev": "nodemon"
     },
 ```
-- Ejecutamos el comando **npm run dev** y realizamos una prueba en el navegador comprobando que al ejecutar **http://localhost** debería salir el mensaje: 
+- Ejecutamos el comando **npm run dev** y realizamos una prueba en el navegador comprobando que al ejecutar **http://localhost:3000** debería salir el mensaje: 
 ```
 message	"Not Found"
 error	
