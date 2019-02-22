@@ -1,6 +1,6 @@
 /* jshint esversion:6 */
 module.exports = [{
-        title: "Javascript",
+        title: "JavaScript",
         description: "JS logo",
         rating: 10,
         url: "https://devstickers.com/assets/img/pro/i4eg.png"

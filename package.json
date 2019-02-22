@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "start": "node ./bin/www",
-        "dev": "nodemon"
+        "dev": "nodemon",
+        "test": "dropdb -U postgres --if-exists test-knex-crud && createdb -U postgres test-knex-crud && cross-env NODE_ENV=test mocha"
     },
     "dependencies": {
         "body-parser": "~1.18.3",
@@ -22,6 +23,9 @@
         "url": "https://github.com/earevalo89/knex.git"
     },
     "devDependencies": {
-        "nodemon": "^1.18.10"
+        "chai": "^4.2.0",
+        "mocha": "^6.0.1",
+        "nodemon": "^1.18.10",
+        "supertest": "^3.4.2"
     }
 }

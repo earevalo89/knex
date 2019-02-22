@@ -17,7 +17,7 @@ module.exports = {
         client: 'pg',
         connection: {
             database: 'knex-crud',
-            user: 'postgres',
+            user: 'devuserdb',
             password: 'YourPassword'
         },
     },
@@ -26,7 +26,7 @@ module.exports = {
         client: 'pg',
         connection: {
             database: 'knex-crud',
-            user: 'postgresProd',
+            user: 'devuserdb',
             password: 'YourPassword'
         },
         pool: {
@@ -277,4 +277,82 @@ status	404
 message	"☑"
 ```
 
+- Ahora creamos un directorio llamado **db** y dentro de el creamos el archivo **db\knex.js** y el archivo **db\queries.js**.
+
+**db\knex.js**
+```
+/* jshint esversion:6 */
+
+const enviroment = process.env.NODE_ENV || 'development';
+const config = require('../knexfile');
+const enviromentConfig = config[enviroment];
+const knex = require('knex');
+const connection = knex(enviromentConfig);
+
+module.exports = connection;
+```
+
+**db\queries.js**
+```
+/* jshint esversion:6 */
+
+//
+const knex = require('./knex'); //Conexión
+module.exports = {
+    getAll() {
+        return knex('sticker');
+    }
+};
+```
+
+- Ahora ajustaremos el archivo stickers para que knex obtenga la data de la tabla **sticker** de la la base de datos **knex-crud** en el motor PostgreSQL.
+
+**Ajustamos el código del archivo [api\stickers.js] como se indica a continuación:**
+```
+/* jshint esversion:6 */
+
+const express = require('express');
+const router = express.Router();
+
+const queries = require('../db/queries');
+
+router.get('/', (req, res) => {
+    /*
+    res.json({
+        message: '☑'
+    });
+    */
+    queries.getAll().then(stickers => {
+        res.json(stickers);
+    });
+});
+
+module.exports = router;
+``` 
+
+Luego de esto se ejecuta el comando **npm run dev** y en el navegador se accede a **http://localhost:3000/api/v1/stickers** y el resultado será la visualización de un JSON así:
+```
+[{"id":4,"title":"Javascript","description":"JS logo","rating":10,"url":"https://devstickers.com/assets/img/pro/i4eg.png"},{"id":5,"title":"Angular","description":"Angular logo","rating":10,"url":"https://devstickers.com/assets/img/cat/angular2.png"},{"id":6,"title":"NodeJS","description":"NodeJS logo","rating":10,"url":"https://devstickers.com/assets/img/cat/nodejs.png"}]
+```
+
+## Configuración de módulos para pruebas
+
+- Instalación de **mocha**, **chai** y **supertest**
+Se ejecuta el siguiente comando:
+```npm install --save-dev mocha chai supertest```
+
+- Luego en el archivo **knexfile.js** se modifica para agregar una configuración para test.
+
+```
+test: {
+    client: 'pg',
+    connection: {
+        database: 'test-knex-crud',
+        user: 'testUser',
+        password: 'YourPassword'
+    },
+},
+```
+
+- Luego se crea el directorio **test** y el archivo **app.test.js**
 

@@ -9,13 +9,20 @@ module.exports = {
             database: 'knex-crud',
             user: 'postgres',
             password: 'Imix2019*'
-        },
+        }
     },
-
+    test: {
+        client: 'pg',
+        connection: {
+            database: 'test-knex-crud',
+            user: 'postgres',
+            password: 'Imix2019*'
+        }
+    },
     production: {
         client: 'pg',
         connection: {
-            database: 'knex-crud',
+            database: 'prod-knex-crud',
             user: 'postgres',
             password: 'Imix2019*'
         },
@@ -27,5 +34,4 @@ module.exports = {
             tableName: 'knex_migrations'
         }
     }
-
 };

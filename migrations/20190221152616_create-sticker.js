@@ -1,6 +1,7 @@
 /* jshint esversion:6 */
 
 exports.up = function(knex, Promise) {
+
     return knex.schema.createTable('sticker', (table) => {
         table.increments();
         table.text('title');
