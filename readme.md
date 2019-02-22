@@ -92,7 +92,7 @@ Esto crea físicamente en la base de datos 3 tablas
 2. knex_migrations: Esta tabla la crea **knex** y la utiliza para registrar el control de las migraciones **up** 
 3. knex_migrations_lock: Esta tabla la crea **knex** y la utiliza para registrar **?**
 
-###Ahora vamos a registrar datos en la tabla stickers
+### Ahora vamos a registrar datos en la tabla stickers
 
 Para ello vamos a utilizar un archivo **JSON** que se encuentra en la carpeta **data** con la siguiente información:
 
@@ -139,7 +139,7 @@ Ran 1 seed files
 
 Y la tabla **sticker**, de la base de datos **knex-crud** deberá tener los registros configurados en el archivo **JSON** llamado **data\stickers.js**
 
-##Convertir ExpressAPP a JSON API
+## Convertir ExpressAPP a JSON API
 
 1. Quitar del archivo **app.js** la sección de código: 
 ```
