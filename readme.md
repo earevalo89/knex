@@ -198,7 +198,7 @@ npm uninstall jade
 removed 42 packages and audited 1180 packages in 3.294s
 found 0 vulnerabilities
 ```
-2. Creamos el directorio **api** y dentro de el el archivo **stickers.js**
+2. Creamos el directorio **api** y dentro de él, el archivo **stickers.js** con el siguiente código.
 
 ```
 /* jshint esversion:6 */
@@ -214,7 +214,7 @@ router.get('/', (req, res) => {
 
 module.exports = router;
 ```
-3. Listar todos los registros con metodo **GET** 
+3. Preparamos la funcionalidad que más tarde listará los registros con metodo **GET** 
 
 - Modificar el archivo **app.js**
 
