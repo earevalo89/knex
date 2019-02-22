@@ -132,10 +132,10 @@ exports.seed = function(knex, Promise) {
 ``` 
 
 Luego se ejecuta el comando **knex seed:run**, si todo sale bien se observará un mensaje muy similar al siguiente:
-================================
+```
 Using environment: development
 Ran 1 seed files 
-================================
+```
 
 Y la tabla **sticker**, de la base de datos **knex-crud** deberá tener los registros configurados en el archivo **JSON** llamado **data\stickers.js**
 
