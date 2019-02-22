@@ -272,7 +272,7 @@ message	"Not Found"
 error	
 status	404
 ```
-Por el contrario cuando se ejecute en el navegador la ruta: **http://localhost:3000/api/v1/stickers** el mensaje que debería presentar es: 
+- Por el contrario cuando se ejecute en el navegador la ruta: **http://localhost:3000/api/v1/stickers** el mensaje que debería presentar es: 
 ```
 message	"☑"
 ```
