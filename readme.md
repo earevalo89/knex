@@ -26,8 +26,8 @@ module.exports = {
         client: 'pg',
         connection: {
             database: 'knex-crud',
-            user: 'postgres',
-            password: 'Imix2019*'
+            user: 'postgresProd',
+            password: 'YourPassword'
         },
         pool: {
             min: 2,
