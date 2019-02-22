@@ -1,5 +1,5 @@
 # knex ejemplo CRUD Stickers
-
+*https://www.youtube.com/watch?v=xFsaRVNLtxI&list=PLM_i0obccy3uwR6ZYa7QE03xDRAqs4Aso&index=1*
 ### Instalación dependencias knex y postgresql
 ```npm install --save knex pg``` 
 
